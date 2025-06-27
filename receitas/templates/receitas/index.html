@@ -1,0 +1,205 @@
+{% extends 'receitas/base.html' %}
+
+
+{% block content %}
+<section class="bg-gradient-to-r from-blue-400 to-emerald-400 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl font-bold mb-4 fade-in">Bem-vindo ao Receitas Deliciosas!</h1>
+        <p class="text-xl mb-8 fade-in">Descubra, compartilhe e saboreie receitas incríveis</p>
+        
+        <div class="max-w-2xl mx-auto fade-in">
+            <form>
+                <div class="relative">
+                    <input type="text" 
+                           name="q"
+                           placeholder="Pesquise por receitas, ingredientes..." 
+                           class="w-full px-6 py-4 text-gray-900 rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
+                    <button type="submit" class="absolute right-2 top-2 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Como Funciona</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-shadow bg-white rounded-lg p-8 text-center fade-in">
+                <div class="text-blue-500 text-5xl mb-6">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Encontre Receitas</h3>
+                <p class="text-gray-600">Explore nossa coleção de receitas organizadas por categoria e dificuldade</p>
+            </div>
+            
+            <div class="card-shadow bg-white rounded-lg p-8 text-center fade-in">
+                <div class="text-emerald-500 text-5xl mb-6">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Salve Favoritas</h3>
+                <p class="text-gray-600">Mantenha suas receitas preferidas sempre à mão para consultar quando quiser</p>
+            </div>
+            
+            <div class="card-shadow bg-white rounded-lg p-8 text-center fade-in">
+                <div class="text-cyan-500 text-5xl mb-6">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Compartilhe</h3>
+                <p class="text-gray-600">Adicione suas próprias receitas e inspire outros cozinheiros</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Receitas Populares</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-shadow bg-white rounded-lg overflow-hidden fade-in">
+                <div class="h-48 bg-gradient-to-r from-orange-300 to-pink-300 flex items-center justify-center">
+                    <i class="fas fa-utensils text-white text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Bolo de Chocolate</h3>
+                    <p class="text-gray-600 mb-4">Delicioso bolo de chocolate com cobertura cremosa</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>45 min</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1">4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-shadow bg-white rounded-lg overflow-hidden fade-in">
+                <div class="h-48 bg-gradient-to-r from-emerald-300 to-teal-300 flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Salada Caesar</h3>
+                    <p class="text-gray-600 mb-4">Salada fresca com molho caesar tradicional</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>15 min</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1">4.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-shadow bg-white rounded-lg overflow-hidden fade-in">
+                <div class="h-48 bg-gradient-to-r from-purple-300 to-blue-300 flex items-center justify-center">
+                    <i class="fas fa-coffee text-white text-4xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Smoothie de Frutas</h3>
+                    <p class="text-gray-600 mb-4">Smoothie nutritivo com frutas da estação</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500">
+                            <i class="fas fa-clock mr-1"></i>
+                            <span>10 min</span>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1">4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium btn-pulse">
+                Ver Todas as Receitas
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Categorias</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <a href="#" class="card-shadow bg-white rounded-lg p-6 text-center hover:bg-blue-50 transition-colors fade-in">
+                <i class="fas fa-birthday-cake text-pink-400 text-3xl mb-3"></i>
+                <h3 class="font-bold text-gray-900">Doces</h3>
+            </a>
+            
+            <a href="#" class="card-shadow bg-white rounded-lg p-6 text-center hover:bg-blue-50 transition-colors fade-in">
+                <i class="fas fa-hamburger text-orange-400 text-3xl mb-3"></i>
+                <h3 class="font-bold text-gray-900">Salgados</h3>
+            </a>
+            
+            <a href="#" class="card-shadow bg-white rounded-lg p-6 text-center hover:bg-blue-50 transition-colors fade-in">
+                <i class="fas fa-cocktail text-blue-400 text-3xl mb-3"></i>
+                <h3 class="font-bold text-gray-900">Bebidas</h3>
+            </a>
+            
+            <a href="#" class="card-shadow bg-white rounded-lg p-6 text-center hover:bg-blue-50 transition-colors fade-in">
+                <i class="fas fa-seedling text-emerald-400 text-3xl mb-3"></i>
+                <h3 class="font-bold text-gray-900">Veganas</h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-blue-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Pronto para Começar?</h2>
+            <p class="text-xl text-gray-600 mb-8">Junte-se à nossa comunidade de amantes da culinária</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium btn-pulse">
+                    <i class="fas fa-plus mr-2"></i>
+                    Adicionar Minha Primeira Receita
+                </a>
+                <a href="#" class="border border-blue-500 text-blue-500 px-8 py-3 rounded-lg hover:bg-blue-500 hover:text-white transition-colors font-medium">
+                    <i class="fas fa-search mr-2"></i>
+                    Explorar Receitas
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div class="fade-in">
+                <div class="text-3xl font-bold text-blue-500 mb-2">1,200+</div>
+                <div class="text-gray-600">Receitas Disponíveis</div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="text-3xl font-bold text-emerald-500 mb-2">850+</div>
+                <div class="text-gray-600">Cozinheiros Ativos</div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="text-3xl font-bold text-cyan-500 mb-2">5,400+</div>
+                <div class="text-gray-600">Receitas Favoritadas</div>
+            </div>
+            
+            <div class="fade-in">
+                <div class="text-3xl font-bold text-purple-500 mb-2">4.8★</div>
+                <div class="text-gray-600">Avaliação Média</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

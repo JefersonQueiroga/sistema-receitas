@@ -1,0 +1,36 @@
+# Django
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+db.sqlite3
+*.sqlite3
+*.log
+
+# Django media/static files
+/media
+/staticfiles
+/static
+
+# Environment
+.env
+.env.*
+venv/
+ENV/
+env/
+.venv/
+*.env
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional, if you want to ignore them)
+# **/migrations/*.py
+# !**/migrations/__init__.py
