@@ -90,7 +90,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-            <div class="recipe-card fade-in">
+            
+             {% for receita in receitas %}
+                <div class="recipe-card fade-in">
                 <div class="relative">
                     <div class="h-48 bg-gradient-to-r from-orange-300 to-pink-300 flex items-center justify-center">
                         <i class="fas fa-utensils text-white text-3xl"></i>
@@ -99,17 +101,17 @@
                         <i class="far fa-heart text-gray-600"></i>
                     </button>
                     <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-primary">Doces</span>
+                        <span class="badge badge-primary">{{ receita.categoria.nome }}</span>
                     </div>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Bolo de Chocolate Especial</h3>
-                    <p class="text-gray-600 text-sm mb-3">Bolo de chocolate com cobertura cremosa e recheio de brigadeiro</p>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">{{ receita.titulo }}</h3>
+                    <p class="text-gray-600 text-sm mb-3">{{ receita.descricao }}</p>
                     
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center text-sm text-gray-500">
                             <i class="fas fa-clock mr-1"></i>
-                            <span>45 min</span>
+                            <span>{{receita.tempo_preparo}} minutos</span>
                         </div>
                         <div class="flex items-center">
                             <div class="rating" data-rating="5" data-readonly>
@@ -125,7 +127,7 @@
 
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-2">
-                            <span class="badge badge-success">Fácil</span>
+                            <span class="badge badge-success">{{receita.get_dificuldade_display}}</span>
                             <span class="text-xs text-gray-500">por Ana Silva</span>
                         </div>
                         <a href="#" class="btn-primary text-sm px-4 py-2">
@@ -133,322 +135,10 @@
                         </a>
                     </div>
                 </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-emerald-300 to-teal-300 flex items-center justify-center">
-                        <i class="fas fa-leaf text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors favorited" data-favorite="2">
-                        <i class="fas fa-heart text-red-500"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-success">Veganas</span>
-                    </div>
                 </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Salada Caesar Vegana</h3>
-                    <p class="text-gray-600 text-sm mb-3">Versão vegana da clássica salada caesar com molho especial</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>15 min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="4" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.5 (89)</span>
-                        </div>
-                    </div>
+            {% endfor %}
 
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-success">Fácil</span>
-                            <span class="text-xs text-gray-500">por Carlos Lima</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-purple-300 to-blue-300 flex items-center justify-center">
-                        <i class="fas fa-coffee text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="3">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-primary">Bebidas</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Smoothie Tropical</h3>
-                    <p class="text-gray-600 text-sm mb-3">Smoothie refrescante com manga, abacaxi e coco</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>10 min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="5" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.9 (67)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-success">Fácil</span>
-                            <span class="text-xs text-gray-500">por Maria Santos</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-red-300 to-yellow-300 flex items-center justify-center">
-                        <i class="fas fa-pizza-slice text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="4">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-warning">Salgados</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Pizza Margherita Caseira</h3>
-                    <p class="text-gray-600 text-sm mb-3">Pizza tradicional italiana com molho de tomate e manjericão</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>90 min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="4" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.6 (156)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-warning">Médio</span>
-                            <span class="text-xs text-gray-500">por Giuseppe</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-indigo-300 to-purple-300 flex items-center justify-center">
-                        <i class="fas fa-fish text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="5">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-warning">Salgados</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Salmão Grelhado</h3>
-                    <p class="text-gray-600 text-sm mb-3">Salmão grelhado com ervas e limão siciliano</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>25 min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="5" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.7 (98)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-success">Fácil</span>
-                            <span class="text-xs text-gray-500">por Chef Roberto</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-green-300 to-blue-300 flex items-center justify-center">
-                        <i class="fas fa-soup text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="6">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-warning">Salgados</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Sopa de Legumes</h3>
-                    <p class="text-gray-600 text-sm mb-3">Sopa nutritiva com legumes frescos da estação</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>40 min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="4" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.4 (76)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-success">Fácil</span>
-                            <span class="text-xs text-gray-500">por Dona Rosa</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-pink-300 to-red-300 flex items-center justify-center">
-                        <i class="fas fa-ice-cream text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="7">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-primary">Doces</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Sorvete de Morango</h3>
-                    <p class="text-gray-600 text-sm mb-3">Sorvete caseiro cremoso de morango natural</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>20 min + 4h</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="5" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.9 (134)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-warning">Médio</span>
-                            <span class="text-xs text-gray-500">por Confeiteira Lu</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recipe-card fade-in">
-                <div class="relative">
-                    <div class="h-48 bg-gradient-to-r from-yellow-300 to-orange-300 flex items-center justify-center">
-                        <i class="fas fa-bread-slice text-white text-3xl"></i>
-                    </div>
-                    <button class="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-50 transition-colors" data-favorite="8">
-                        <i class="far fa-heart text-gray-600"></i>
-                    </button>
-                    <div class="absolute bottom-3 left-3">
-                        <span class="badge badge-warning">Salgados</span>
-                    </div>
-                </div>
-                <div class="p-4">
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Pão Caseiro Integral</h3>
-                    <p class="text-gray-600 text-sm mb-3">Pão integral macio e saboroso feito em casa</p>
-                    
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>
-                            <span>3h 30min</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="rating" data-rating="4" data-readonly>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star active"></i>
-                                <i class="fas fa-star rating-star"></i>
-                            </div>
-                            <span class="text-sm text-gray-600 ml-1">4.3 (92)</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <span class="badge badge-danger">Difícil</span>
-                            <span class="text-xs text-gray-500">por Padeiro João</span>
-                        </div>
-                        <a href="#" class="btn-primary text-sm px-4 py-2">
-                            Ver Receita
-                        </a>
-                    </div>
-                </div>
-            </div>
+          
         </div>
 
         <div class="pagination">
